@@ -1,3 +1,7 @@
+let num1 = 0;
+let num2 = 0;
+let var2 = false;
+let p1 = "";
 function add(inp1, inp2) {
     return inp1 + inp2;
 }
@@ -27,10 +31,24 @@ function operate(operation, inp1, inp2) {
     return result;
 }
 function populatedisplay(input) {
-    document.querySelector("#content").textContent += input;
+    if (!input2) {
+        p1 = document.querySelector("#content1").textContent += input;
+        num1 = parseFloat((document.querySelector("#content1").textContent), 10);
+    }
+    else {
+        document.querySelector("#content2").textContent += input;
+        num2 = parseFloat((document.querySelector("#content2").textContent), 10);
+        var2 = true;
+    }
 }
-let num1 = 0;
-let num2 = 0;
+function cleardisplay() {
+    document.querySelector("#content1").textContent = "";
+    document.querySelector("#content2").textContent = "";
+}
+let allowed = true;
+let input2 = false;
+console.log(num1);
+let op = "";
 let sev = document.querySelector("#sev");
 sev.addEventListener("click", function () {
     populatedisplay("7");
@@ -70,4 +88,80 @@ thre.addEventListener("click", function () {
 let zer = document.querySelector("#zer");
 zer.addEventListener("click", function () {
     populatedisplay("0");
+});
+let div = document.querySelector("#div");
+div.addEventListener("click", function () {
+    if (allowed && p1 != "") {
+        op = "/";
+        populatedisplay(" / ");
+        allowed = false;
+        input2 = true;
+    }
+
+});
+let mul = document.querySelector("#mul");
+mul.addEventListener("click", function () {
+    if (allowed && p1 != "") {
+        op = "*";
+        populatedisplay(" * ");
+        allowed = false;
+        input2 = true;
+    }
+
+});
+let addi = document.querySelector("#add");
+addi.addEventListener("click", function () {
+
+    if (allowed) {
+        op = "+";
+        populatedisplay(" + ");
+    }
+    allowed = false;
+    input2 = true;
+});
+let sub = document.querySelector("#sub");
+sub.addEventListener("click", function () {
+    if (allowed) {
+        op = "-";
+        populatedisplay(" - ");
+    }
+    allowed = false;
+    input2 = true;
+});
+let equ = document.querySelector("#equ");
+equ.addEventListener("click", function () {
+    if (num2 == 0 && op == "/") {
+        alert("Division by zero??😒😒");
+        cleardisplay();
+        allowed = true;
+        input2 = false;
+        var2 = false;
+    }
+    else if (!var2) {
+        alert("Second input is required!😁😁");
+        cleardisplay();
+        allowed = true;
+        input2 = false;
+        var2 = false;
+    }
+    else if (var2) {
+
+        let answer = operate(op, num1, num2);
+        answer = answer.toFixed(2);
+        num1 = answer;
+        cleardisplay();
+        input2 = false;
+        populatedisplay(answer);
+        allowed = true;
+        var2 = false;
+    }
+});
+let clea = document.querySelector("#clea");
+clea.addEventListener("click", function () {
+    cleardisplay();
+    allowed = true;
+    input2 = false;
+    num1 = 0;
+    num2 = 0;
+    var2 = false;
 });
