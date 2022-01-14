@@ -9,6 +9,8 @@ body{
     display:inline-flex;
     gap:0.3em;
     color: #D8D8D8;
+    font-size: 32px;
+    margin-left: 15em;
 }
 button{
     background-color: #D8D8D8;
@@ -20,7 +22,8 @@ button{
     background-color: #252525;
     width:600px;
     height: 320px;
-    padding: 15px;
+    padding-top: 15px;
+    padding-bottom: 10px;
 }
 #r1{
     display: flex;
@@ -66,12 +69,12 @@ button{
 }
 #r5{
     display: flex;
-    margin-top: 0.8em;
+    margin-top: 0.6em;
 }
 .reg2{
     background-color: #252525;
     border-style: none;
     font-size: large;
     color: #D8D8D8;
-    margin-right: 8.2em;
+    margin-right: 8.3em;
 }
