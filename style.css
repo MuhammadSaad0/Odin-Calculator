@@ -1,20 +1,30 @@
 #header{
     text-align: center;
-    color: #26cc00
+    color: #26cc00;
+    font-family: monospace;
 }
 body{
     background-color: #121212;
 }
 #display{
+    font-family: monospace;
     display:inline-flex;
     gap:0.3em;
     color: #D8D8D8;
     font-size: 32px;
-    margin-left: 15em;
+    margin-left: 33%;
 }
 button{
     background-color: #D8D8D8;
     flex:auto;
+    position: relative;
+    transition: all 0.1s ease-out;
+}
+button:after {
+    content:'';
+    position:absolute;
+    top:-21px; bottom:-21px; 
+    left:-5px; right:-5px; 
 }
 #buttons{
     margin-left: auto;
@@ -22,11 +32,39 @@ button{
     background-color: #252525;
     width:600px;
     height: 320px;
-    padding-top: 15px;
-    padding-bottom: 10px;
+    padding:0.4em;
+    
+}
+#one{
+    position: relative;
+}
+#one:after{
+    content:'';
+    position:absolute;
+    top:-21px; bottom:-21px; 
+    right:-50px; left: -50px;
+}
+#two{
+    position: relative;
+}
+#two:after{
+    content:'';
+    position:absolute;
+    top:-21px; bottom:-21px; 
+    right:-50px; left: -50px;
+}
+#thre{
+    position: relative;
+}
+#thre:after{
+    content:'';
+    position:absolute;
+    top:-21px; bottom:-21px; 
+    right:-50px; left: -50px;
 }
 #r1{
     display: flex;
+    padding-top: 0.5em;
 }
 .reg{
     background-color: #252525;
@@ -52,8 +90,6 @@ button{
     display: inline-flex;
     margin-left: 4em;
     gap:8em;
-    
-
 }
 #eq{
     display: inline-flex;
@@ -66,6 +102,13 @@ button{
     margin-top:0.8em;
     background-color: #26cc00;
     color: #D8D8D8;
+    position:relative;
+}
+#equ:after{
+    content:'';
+    position:absolute;
+    top:-2px; bottom:-2px; 
+    right:-2px; left: -2px;
 }
 #r5{
     display: flex;
@@ -77,4 +120,10 @@ button{
     font-size: large;
     color: #D8D8D8;
     margin-right: 8.3em;
+}
+.clicked{
+    background-color: #D8D8D8;
+}
+.clicked2{
+    text-shadow:0 0 20px #26cc00, 0 0 30px #26cc00, 0 0 40px #26cc00, 0 0 55px #26cc00, 0 0 75px #26cc00;
 }

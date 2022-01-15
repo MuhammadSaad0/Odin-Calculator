@@ -2,6 +2,7 @@ let num1 = 0;
 let num2 = 0;
 let var2 = false;
 let p1 = "";
+let audio = new Audio("./audio/click.wav")
 function add(inp1, inp2) {
     return inp1 + inp2;
 }
@@ -32,13 +33,17 @@ function operate(operation, inp1, inp2) {
 }
 function populatedisplay(input) {
     if (!input2) {
+        audio.play();
         p1 = document.querySelector("#content1").textContent += input;
         num1 = parseFloat((document.querySelector("#content1").textContent), 10);
+        audio.currentTime = 0;
     }
     else {
+        audio.play();
         document.querySelector("#content2").textContent += input;
         num2 = parseFloat((document.querySelector("#content2").textContent), 10);
         var2 = true;
+        audio.currentTime = 0;
     }
 }
 function cleardisplay() {
@@ -52,42 +57,102 @@ let op = "";
 let sev = document.querySelector("#sev");
 sev.addEventListener("click", function () {
     populatedisplay("7");
+    sev.classList.add("clicked2");
+    setTimeout(() => {
+        $(sev).removeClass("clicked2");
+
+
+    }, 250);
 });
 let eig = document.querySelector("#eig");
 eig.addEventListener("click", function () {
     populatedisplay("8");
+    eig.classList.add("clicked2");
+    setTimeout(() => {
+        $(eig).removeClass("clicked2");
+
+
+    }, 250);
 });
 let nin = document.querySelector("#nin");
 nin.addEventListener("click", function () {
     populatedisplay("9");
+    nin.classList.add("clicked2");
+    setTimeout(() => {
+        $(nin).removeClass("clicked2");
+
+
+    }, 250);
 });
 let fou = document.querySelector("#fou");
 fou.addEventListener("click", function () {
     populatedisplay("4");
+    fou.classList.add("clicked2");
+    setTimeout(() => {
+        $(fou).removeClass("clicked2");
+
+
+    }, 250);
 });
 let fiv = document.querySelector("#fiv");
 fiv.addEventListener("click", function () {
     populatedisplay("5");
+    fiv.classList.add("clicked2");
+    setTimeout(() => {
+        $(fiv).removeClass("clicked2");
+
+
+    }, 250);
 });
 let six = document.querySelector("#six");
 six.addEventListener("click", function () {
     populatedisplay("6");
+    six.classList.add("clicked2");
+    setTimeout(() => {
+        $(six).removeClass("clicked2");
+
+
+    }, 250);
 });
 let one = document.querySelector("#one");
 one.addEventListener("click", function () {
     populatedisplay("1");
+    one.classList.add("clicked2");
+    setTimeout(() => {
+        $(one).removeClass("clicked2");
+
+
+    }, 250);
 });
 let two = document.querySelector("#two");
 two.addEventListener("click", function () {
     populatedisplay("2");
+    two.classList.add("clicked2");
+    setTimeout(() => {
+        $(two).removeClass("clicked2");
+
+
+    }, 250);
 });
 let thre = document.querySelector("#thre");
 thre.addEventListener("click", function () {
     populatedisplay("3");
+    thre.classList.add("clicked2");
+    setTimeout(() => {
+        $(thre).removeClass("clicked2");
+
+
+    }, 250);
 });
 let zer = document.querySelector("#zer");
 zer.addEventListener("click", function () {
     populatedisplay("0");
+    zer.classList.add("clicked2");
+    setTimeout(() => {
+        $(zer).removeClass("clicked2");
+
+
+    }, 250);
 });
 let div = document.querySelector("#div");
 div.addEventListener("click", function () {
@@ -97,6 +162,12 @@ div.addEventListener("click", function () {
         allowed = false;
         input2 = true;
     }
+    div.classList.add("clicked");
+    setTimeout(() => {
+        $(div).removeClass("clicked");
+
+
+    }, 250);
 
 });
 let mul = document.querySelector("#mul");
@@ -106,6 +177,13 @@ mul.addEventListener("click", function () {
         populatedisplay(" * ");
         allowed = false;
         input2 = true;
+        mul.classList.add("clicked");
+        setTimeout(() => {
+            $(mul).removeClass("clicked");
+
+
+        }, 250);
+
     }
 
 });
@@ -118,6 +196,12 @@ addi.addEventListener("click", function () {
     }
     allowed = false;
     input2 = true;
+    addi.classList.add("clicked");
+    setTimeout(() => {
+        $(addi).removeClass("clicked");
+
+
+    }, 250);
 });
 let sub = document.querySelector("#sub");
 sub.addEventListener("click", function () {
@@ -127,6 +211,12 @@ sub.addEventListener("click", function () {
     }
     allowed = false;
     input2 = true;
+    sub.classList.add("clicked");
+    setTimeout(() => {
+        $(sub).removeClass("clicked");
+
+
+    }, 250);
 });
 let equ = document.querySelector("#equ");
 equ.addEventListener("click", function () {
