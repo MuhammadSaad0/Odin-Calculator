@@ -1,8 +1,11 @@
 let num1 = 0;
 let num2 = 0;
+let neg1 = false;
 let var2 = false;
+let check1 = 0;
 let p1 = "";
 let audio = new Audio("./audio/click.wav")
+let audio_C = new Audio("./audio/clear.wav");
 function add(inp1, inp2) {
     return inp1 + inp2;
 }
@@ -52,7 +55,6 @@ function cleardisplay() {
 }
 let allowed = true;
 let input2 = false;
-console.log(num1);
 let op = "";
 let sev = document.querySelector("#sev");
 sev.addEventListener("click", function () {
@@ -193,10 +195,11 @@ addi.addEventListener("click", function () {
     if (allowed) {
         op = "+";
         populatedisplay(" + ");
+        allowed = false;
+        input2 = true;
+        addi.classList.add("clicked");
     }
-    allowed = false;
-    input2 = true;
-    addi.classList.add("clicked");
+
     setTimeout(() => {
         $(addi).removeClass("clicked");
 
@@ -205,13 +208,23 @@ addi.addEventListener("click", function () {
 });
 let sub = document.querySelector("#sub");
 sub.addEventListener("click", function () {
-    if (allowed) {
+
+    sub.classList.add("clicked");
+    if (allowed && p1 == "") {
+        neg1 = true;
+        allowed = true;
+        populatedisplay("-");
+    }
+    else if (allowed) {
         op = "-";
         populatedisplay(" - ");
+        input2 = true;
+        allowed = false;
     }
-    allowed = false;
-    input2 = true;
-    sub.classList.add("clicked");
+    else if (!allowed && check1 == 0) {
+        populatedisplay("-");
+        check1 = 1;
+    }
     setTimeout(() => {
         $(sub).removeClass("clicked");
 
@@ -235,7 +248,6 @@ equ.addEventListener("click", function () {
         var2 = false;
     }
     else if (var2) {
-
         let answer = operate(op, num1, num2);
         answer = answer.toFixed(2);
         num1 = answer;
@@ -244,14 +256,20 @@ equ.addEventListener("click", function () {
         populatedisplay(answer);
         allowed = true;
         var2 = false;
+        check1 = 0;
     }
 });
 let clea = document.querySelector("#clea");
 clea.addEventListener("click", function () {
-    cleardisplay();
-    allowed = true;
-    input2 = false;
-    num1 = 0;
-    num2 = 0;
-    var2 = false;
+    if (p1 != "") {
+        cleardisplay();
+        audio_C.play();
+        audio_C.currentTime = 0;
+        neg1 = false;
+        allowed = true;
+        input2 = false;
+        num1 = 0;
+        num2 = 0;
+        var2 = false;
+    }
 });
