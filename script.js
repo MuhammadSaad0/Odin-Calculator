@@ -3,6 +3,7 @@ let num2 = 0;
 let neg1 = false;
 let var2 = false;
 let check1 = 0;
+let check2 = 0;
 let p1 = "";
 let audio = new Audio("./audio/click.wav")
 let audio_C = new Audio("./audio/clear.wav");
@@ -59,29 +60,45 @@ let op = "";
 let sev = document.querySelector("#sev");
 sev.addEventListener("click", function () {
     populatedisplay("7");
-    sev.classList.add("clicked2");
+    if (check2 == 0) {
+        sev.classList.add("clicked2");
+    }
+    else {
+        sev.classList.add("clicked3");
+    }
     setTimeout(() => {
         $(sev).removeClass("clicked2");
-
+        $(sev).removeClass("clicked3");
 
     }, 250);
 });
 let eig = document.querySelector("#eig");
 eig.addEventListener("click", function () {
     populatedisplay("8");
-    eig.classList.add("clicked2");
+    if (check2 == 0) {
+        eig.classList.add("clicked2");
+    }
+    else {
+        eig.classList.add("clicked3");
+    }
     setTimeout(() => {
         $(eig).removeClass("clicked2");
-
+        $(eig).removeClass("clicked3");
 
     }, 250);
 });
 let nin = document.querySelector("#nin");
 nin.addEventListener("click", function () {
     populatedisplay("9");
-    nin.classList.add("clicked2");
+    if (check2 == 0) {
+        nin.classList.add("clicked2");
+    }
+    else {
+        nin.classList.add("clicked3");
+    }
     setTimeout(() => {
         $(nin).removeClass("clicked2");
+        $(nin).removeClass("clicked3");
 
 
     }, 250);
@@ -89,9 +106,15 @@ nin.addEventListener("click", function () {
 let fou = document.querySelector("#fou");
 fou.addEventListener("click", function () {
     populatedisplay("4");
-    fou.classList.add("clicked2");
+    if (check2 == 0) {
+        fou.classList.add("clicked2");
+    }
+    else {
+        fou.classList.add("clicked3");
+    }
     setTimeout(() => {
         $(fou).removeClass("clicked2");
+        $(fou).removeClass("clicked3");
 
 
     }, 250);
@@ -99,61 +122,87 @@ fou.addEventListener("click", function () {
 let fiv = document.querySelector("#fiv");
 fiv.addEventListener("click", function () {
     populatedisplay("5");
-    fiv.classList.add("clicked2");
+    if (check2 == 0) {
+        fiv.classList.add("clicked2");
+    }
+    else {
+        fiv.classList.add("clicked3");
+    }
     setTimeout(() => {
         $(fiv).removeClass("clicked2");
-
-
+        $(fiv).removeClass("clicked3");
     }, 250);
 });
 let six = document.querySelector("#six");
 six.addEventListener("click", function () {
     populatedisplay("6");
-    six.classList.add("clicked2");
+    if (check2 == 0) {
+        six.classList.add("clicked2");
+    }
+    else {
+        six.classList.add("clicked3");
+    }
     setTimeout(() => {
         $(six).removeClass("clicked2");
-
+        $(six).removeClass("clicked3");
 
     }, 250);
 });
 let one = document.querySelector("#one");
 one.addEventListener("click", function () {
     populatedisplay("1");
-    one.classList.add("clicked2");
+    if (check2 == 0) {
+        one.classList.add("clicked2");
+    }
+    else {
+        one.classList.add("clicked3");
+    }
     setTimeout(() => {
         $(one).removeClass("clicked2");
-
-
+        $(one).removeClass("clicked3");
     }, 250);
 });
 let two = document.querySelector("#two");
 two.addEventListener("click", function () {
     populatedisplay("2");
-    two.classList.add("clicked2");
+    if (check2 == 0) {
+        two.classList.add("clicked2");
+    }
+    else {
+        two.classList.add("clicked3");
+    }
     setTimeout(() => {
         $(two).removeClass("clicked2");
-
-
+        $(two).removeClass("clicked3");
     }, 250);
 });
 let thre = document.querySelector("#thre");
 thre.addEventListener("click", function () {
     populatedisplay("3");
-    thre.classList.add("clicked2");
+    if (check2 == 0) {
+        thre.classList.add("clicked2");
+    }
+    else {
+        thre.classList.add("clicked3");
+    }
     setTimeout(() => {
         $(thre).removeClass("clicked2");
-
+        $(thre).removeClass("clicked3");
 
     }, 250);
 });
 let zer = document.querySelector("#zer");
 zer.addEventListener("click", function () {
     populatedisplay("0");
-    zer.classList.add("clicked2");
+    if (check2 == 0) {
+        zer.classList.add("clicked2");
+    }
+    else {
+        zer.classList.add("clicked3");
+    }
     setTimeout(() => {
         $(zer).removeClass("clicked2");
-
-
+        $(zer).removeClass("clicked3");
     }, 250);
 });
 let div = document.querySelector("#div");
@@ -164,10 +213,15 @@ div.addEventListener("click", function () {
         allowed = false;
         input2 = true;
     }
-    div.classList.add("clicked");
+    if (check2 == 1) {
+        div.classList.add("clicked4");
+    }
+    else {
+        div.classList.add("clicked");
+    }
     setTimeout(() => {
         $(div).removeClass("clicked");
-
+        $(div).removeClass("clicked4");
 
     }, 250);
 
@@ -179,9 +233,15 @@ mul.addEventListener("click", function () {
         populatedisplay(" * ");
         allowed = false;
         input2 = true;
-        mul.classList.add("clicked");
+        if (check2 == 1) {
+            mul.classList.add("clicked4");
+        }
+        else {
+            mul.classList.add("clicked");
+        }
         setTimeout(() => {
             $(mul).removeClass("clicked");
+            $(mul).removeClass("clicked4");
 
 
         }, 250);
@@ -197,11 +257,18 @@ addi.addEventListener("click", function () {
         populatedisplay(" + ");
         allowed = false;
         input2 = true;
-        addi.classList.add("clicked");
+        if (check2 == 1) {
+            addi.classList.add("clicked4");
+        }
+        else {
+            addi.classList.add("clicked");
+        }
     }
 
     setTimeout(() => {
         $(addi).removeClass("clicked");
+        $(addi).removeClass("clicked4");
+
 
 
     }, 250);
@@ -209,7 +276,12 @@ addi.addEventListener("click", function () {
 let sub = document.querySelector("#sub");
 sub.addEventListener("click", function () {
 
-    sub.classList.add("clicked");
+    if (check2 == 1) {
+        sub.classList.add("clicked4");
+    }
+    else {
+        sub.classList.add("clicked");
+    }
     if (allowed && p1 == "") {
         neg1 = true;
         allowed = true;
@@ -227,8 +299,7 @@ sub.addEventListener("click", function () {
     }
     setTimeout(() => {
         $(sub).removeClass("clicked");
-
-
+        $(sub).removeClass("clicked4");
     }, 250);
 });
 let equ = document.querySelector("#equ");
@@ -262,6 +333,12 @@ equ.addEventListener("click", function () {
 let clea = document.querySelector("#clea");
 clea.addEventListener("click", function () {
     if (p1 != "") {
+        if (check2 == 1) {
+            clea.classList.add("clicked4");
+        }
+        else {
+            clea.classList.add("clicked");
+        }
         cleardisplay();
         audio_C.play();
         audio_C.currentTime = 0;
@@ -271,5 +348,56 @@ clea.addEventListener("click", function () {
         num1 = 0;
         num2 = 0;
         var2 = false;
+        setTimeout(() => {
+            $(clea).removeClass("clicked");
+            $(clea).removeClass("clicked4");
+        }, 250);
     }
+});
+let invert = false;
+let random = document.querySelector("#random");
+let cont = document.querySelector("body");
+let but = document.querySelector("#buttons")
+let header = document.querySelector("#header");
+let dis = document.querySelector("#display");
+let c2 = document.querySelector(".clicked2");
+let footer = document.querySelector("#footer");
+random.addEventListener("click", function () {
+    if (!invert) {
+        cont.classList.add("light2");
+        but.style.backgroundColor = "#F5F5F3"
+        dis.style.color = "black";
+        footer.style.backgroundColor = "black";
+        footer.style.color = "white";
+        $('button, input:button').addClass('light');
+        $('button, input:button').css('transition', "all 0s ease");
+        check2 = 1;
+        equ.style.backgroundColor = "blue";
+        mul.style.color = "blue";
+        div.style.color = "blue";
+        addi.style.color = "blue";
+        sub.style.color = "blue";
+        clea.style.color = "blue";
+        header.style.color = "blue";
+        invert = !invert;
+    }
+    else {
+        cont.classList.remove("light2");
+        but.style.backgroundColor = "#252525";
+        dis.style.color = "#D8D8D8";
+        footer.style.backgroundColor = "white";
+        footer.style.color = "black";
+        check2 = 0;
+        $('button, input:button').removeClass('light');
+        equ.style.backgroundColor = "#26cc00";
+        mul.style.color = "#26cc00";
+        div.style.color = "#26cc00";
+        addi.style.color = "#26cc00";
+        sub.style.color = "#26cc00";
+        clea.style.color = "#26cc00";
+        header.style.color = "#26cc00";
+        invert = !invert;
+
+    }
+
 });
